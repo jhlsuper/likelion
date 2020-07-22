@@ -9,9 +9,8 @@ router.register('post',views.PostViewSet)
 
 urlpatterns =[
     
-    path('',include(router.urls)),
-    path('post/<int:pk>/',views.PostDetail.as_view()),
+    path('',include(router.urls))
 
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+#urlpatterns = format_suffix_patterns(urlpatterns)
