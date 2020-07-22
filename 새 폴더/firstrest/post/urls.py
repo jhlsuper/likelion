@@ -8,6 +8,10 @@ router.register('post',views.PostViewSet)
 
 
 urlpatterns =[
+    
     path('',include(router.urls)),
+    path('post/<int:pk>/',views.PostDetail.as_view()),
 
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
