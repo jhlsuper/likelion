@@ -6,4 +6,4 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         #filels = '__all__' 밑에거랑 같게 나옴
         fields= ['id','title','body']
-        read_only_fiels =('title',)
+        read_only_fields =('title',)
