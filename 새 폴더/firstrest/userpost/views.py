@@ -1,10 +1,12 @@
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
 from userpost.models import UserPost
 from userpost.serializer import UserSerializer
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter
 class UserPostViewSet(viewsets.ModelViewSet):
     authentication_classes =[BasicAuthentication, SessionAuthentication]
+    permission_classes =[IsAuthenticatedOrReadOnly] #퍼미션 설정
     queryset = UserPost.objects.all()
     serializer_class = UserSerializer
 
